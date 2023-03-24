@@ -1,0 +1,71 @@
+[neutronic]
+
+#  lambs e betas
+
+ ngr = 6            #  Número de grupos de nêutrons atrasados 
+
+ al   =    0.0124,     0.0305,    0.110,      0.301,     1.1400,     3.0100 #
+ beta = 1.8148E-4, 8.93184E-4, 2.845E-3, 1.31186E-3, 1.48631E-3, 2.65164E-4 #
+
+ alam  = 1.83E-05   # Tempo de geração de nêutrons. (s) 
+
+# RHOT=RHOI + A1*T + A2*T*T + ALFAF*(TF(T)-TF0) + ALFAM*(TM(T)-TM0)
+
+ rhoi  =  0.008     #  Reatividade inicial (absoluto)
+ a1    =  0.0       #  Coeficiente linear da reatividade (s-1)
+ a2    =  0.0       #  Coeficiente quadrático da reatividade (s-2)
+ a3    =  0.0       #  Coeficiente cúbico da reatividade (s-3)
+ alfaf = -0.000031  #  Coeficiente de reatividade de combustível (abs/oC)
+ alfam = -0.000651  #  Coeficiente de reatividade do moderador (abs/oC)
+
+ xim = 0.0          #  Fator de ponderação para o cálculo da reatividade do moderador (adimensional entre 0 e 1)
+ xif = 0.0          #  Fator de ponderação para o cálculo da reatividade do combustível (adimensional entre 0 e 1)
+
+[termo]
+
+ pfat  =  3.0       #  Fator de pico.
+ qa    = 14.7E+06   #  Potência térmcia. (MW)
+ aqint =  0.0       #  Energia acumulada (MJ) – Utilizar zero.
+
+ cpf   =  298.0     #  Calor específico do combustível (J/kg°C)
+ cpc   =  535.0     #  Calor específico do revestimento (J/kg°C)
+ cpm   = 5520.0     #  Calor específico do moderador (J/kg°C)
+
+ tcvcc = 1000.0     #  Temperatura com convecção com ebulição  (oC)
+ gm    =  158.0     #  Vazão do refrigerante (kg/s)
+ tmp0  =  263.0     #  Temperatura de entrada do moderador no instante inicial (°C)
+ tmp1  =    0.0     #  Temperatura da entrada 1 do refrigerante (oC)
+ tmp2  =    0.0     #  Temperatura da entrada 2 do refrigerante (oC)
+
+ kf    =    4.32    #  Condutividade do combustível (W/m oC)
+ kc    =   18.35    #  Condutividade do revestimento (W/m oC)
+ hg    = 7219.0     #  Coeficiente de convecção do GAP (W/m2 oC)
+ hm    = 9771.1     #  Coeficiente de convecção do moderador (W/m2 oC)
+ hdnb  = 9771.1     #  Coeficiente de convecção em ebulição (W/m2 oC)
+
+[geometric-material]
+
+ nn = 5             #  Número de pontos para o cálculo da distribuição 
+                    #          de temperatura na vareta de combustível.
+
+ mf    = 947.80     #  Massa do combustível (kg).
+ mc    = 217.80     #  Massa do revestimento (kg).
+ mm    = 157.80     #  Massa do moderador (kg).
+
+ rf    = 4.245E-03  #  Raio do combustível (mm).
+ rc    = 4.900E-03  #  Raio do revestimento (mm).
+ dc    = 0.600E-03  #  Espessura do revestimento (mm).
+
+ lftt  = 1006.00    #  Comprimento total do combustível (m).
+
+[parameter]
+
+ iflux = 0           #  Flag do fluxo de refrigerante. 
+
+ tmax  = 1.0        #  Tempo máximo do variante (s)
+ dt0   = 0.001      #  Intervalo de tempo do cálculo (s)
+ dtprt = 0.02       #  Intervalo de tempo para impressão (s)
+ fqprt = 0.2        #  Intervalo de tempo para a impressão dos dados do canal quente (s)
+
+ itemp = 0          #  Flag de temperatura de entrada do refrigerante. 
+
